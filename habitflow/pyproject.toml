@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "habitflow"
+version = "1.0.0"
+description = "A command-line habit tracker combining OOP, functional analytics, and SQLite persistence."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Dhruv Nareshbhai Chaklasiya" }]
+dependencies = [
+    "click>=8.1",
+]
+
+[project.scripts]
+habit-tracker = "habit_tracker.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4", "pytest-cov>=4.1"]
+
+[tool.setuptools.packages.find]
+include = ["habit_tracker*"]
